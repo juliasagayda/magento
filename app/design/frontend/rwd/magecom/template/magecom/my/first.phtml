@@ -1,0 +1,49 @@
+<div class="product_list">
+    <ul>
+        <?php
+        $prod_collect = $this->getProducts('Test');
+        if ($prod_collect) {
+        foreach ($prod_collect as $key => $product) : ?>
+            <?php
+            $product_id = $product->id;
+            $produc_by_id = Mage::getModel('catalog/product')->load($product_id);
+            // Now that we loaded the full product model
+            $product_name = $product->name;
+            $url = $product->url_path;
+            $sku = $product->sku;
+            $short_desc = $product->short_description;
+            // Let's get the Product Image URL
+            $image_url = $product->getImageUrl();
+            $price =  $product->price;
+            // Let's print the product information we gathered and continue onto the next one
+            ?>
+            <li class="item">
+                <a href="<?php echo $url; ?>" class="product-image">
+                    <?php $size = 450; ?>
+                    <img id="product-collection-image-<?php echo $product_id; ?>"
+                         src="<?php echo $this->helper('catalog/image')->init($partOfCollection, 'small_image')->resize($size); ?>"
+                        />
+                </a>
+                <div class="product-info">
+                    <h2 class="product-name"><a href="<?php echo $url; ?>" title="<?php echo $name ?>"> <?php echo $name; ?></a></h2>
+                    <div class="price-box">
+                    <span class="regular-price" id="product-price-<?php echo $product_id ?>">
+                        <span class="price price-by-me"> <?php echo $price; ?></span>
+                 </span>
+                        <span class="sku">
+                            <?php echo $sku; ?>
+                            </span>
+                         <span class="description">
+                            <?php echo $short_desc; ?>
+                            </span>
+                    </div>
+                </div>
+            </li>
+        <?php endforeach; } else echo 'Products not found';?>
+
+
+
+    </ul>
+
+</div>
+<a href="<?php echo Mage::getUrl('magecom') ?>">My Form</a>

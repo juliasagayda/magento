@@ -1,0 +1,11 @@
+<?xml version="1.0"?>
+
+<layout>
+    <default>
+        <reference name="content">
+            <!--<block type="magecom_first/test" name="my_first_block" template="magecom/my/first.phtml" />-->
+            <!--<block type="magecom_first/test" name="first_test" template="magecom/my/form.phtml"/>-->
+        </reference>
+    </default>
+
+</layout>
