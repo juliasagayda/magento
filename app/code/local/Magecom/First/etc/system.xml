@@ -1,0 +1,70 @@
+<?xml version="1.0"?>
+<config>
+    <tabs>
+        <test>
+            <label>Magecom First</label>
+            <sort_order>100</sort_order>
+        </test>
+    </tabs>
+    <sections>
+        <test>
+            <label>Magecom Options</label>
+            <tab>test</tab>
+            <sort_order>1000</sort_order>
+            <show_in_default>1</show_in_default>
+            <show_in_website>1</show_in_website>
+            <show_in_store>1</show_in_store>
+
+            <groups>
+                <test_group>
+                    <label>My Extension Options</label>
+                    <frontend_type>text</frontend_type>
+                    <sort_order>1000</sort_order>
+                    <show_in_default>1</show_in_default>
+                    <show_in_website>1</show_in_website>
+                    <show_in_store>1</show_in_store>
+
+                    <fields>
+                        <test_input >
+                            <label>Count of Blog Post: </label>
+                            <comment>add count</comment>
+                            <frontend_type>text</frontend_type>
+                            <sort_order>20</sort_order>
+                            <show_in_default>1</show_in_default>
+                            <show_in_website>1</show_in_website>
+                            <show_in_store>1</show_in_store>
+                        </test_input>
+                        <qty_obs>
+                            <label>Add Qty for cart: </label>
+                            <comment>qty</comment>
+                            <frontend_type>text</frontend_type>
+                            <sort_order>20</sort_order>
+                            <show_in_default>1</show_in_default>
+                            <show_in_website>1</show_in_website>
+                            <show_in_store>1</show_in_store>
+                        </qty_obs>
+                        <admin_email >
+                            <label>Add admin email: </label>
+                            <comment>email</comment>
+                            <frontend_type>text</frontend_type>
+                            <sort_order>20</sort_order>
+                            <show_in_default>1</show_in_default>
+                            <show_in_website>1</show_in_website>
+                            <show_in_store>1</show_in_store>
+                        </admin_email>
+                        <test_select >
+                            <label>Module </label>
+                            <comment>enabled/disabled</comment>
+                            <frontend_type>select</frontend_type>
+                            <sort_order>90</sort_order>
+                            <show_in_default>1</show_in_default>
+                            <show_in_website>1</show_in_website>
+                            <show_in_store>1</show_in_store>
+                            <!--<source_model>adminhtml/system_config_source_yesno</source_model>-->
+                        </test_select>
+                    </fields>
+                </test_group>
+            </groups>
+        </test>
+    </sections>
+</config>

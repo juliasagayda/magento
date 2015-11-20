@@ -1,0 +1,68 @@
+<?xml version="1.0"?>
+
+<config>
+    <menu>
+        <test>
+            <title>Test</title>
+            <sort_order>1000</sort_order>
+            <children>
+                <test_child>
+                    <title>Test Child</title>
+                    <action>adminhtml/order/</action>
+                </test_child>
+                <test_child2>
+                    <title>
+                        Test Child2
+                    </title>
+                </test_child2>
+                    </children>
+                </test>
+            </menu>
+
+
+    <acl>
+        <resources>
+            <admin>
+                <children>
+                    <system>
+                        <children>
+                            <config>
+                                <children>
+                                    <test translate="title" module="magecom_first">
+                                        <title>Test</title>
+                                        <sort_order>999</sort_order>
+                                    </test>
+                                </children>
+                            </config>
+                        </children>
+                    </system>
+                </children>
+            </admin>
+        </resources>
+    </acl>
+
+    <acl>
+        <resources>
+                <admin>
+                    <children>
+                        <test>
+                            <title>Test</title>
+                            <sort_order>1000</sort_order>
+                            <children>
+                                <test_child>
+                                    <title>
+                                        Test Child
+                                    </title>
+                                </test_child>
+                                <test_child2>
+                                    <title>
+                                        Test Child2
+                                    </title>
+                                </test_child2>
+                            </children>
+                        </test>
+                    </children>
+           </admin>
+        </resources>
+    </acl>
+</config>

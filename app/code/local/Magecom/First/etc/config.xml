@@ -1,0 +1,115 @@
+<?xml version="1.0"?>
+
+<config>
+    <modules>
+        <Magecom_First>
+            <version>1.0.4</version>
+        </Magecom_First>
+    </modules>
+    <global>
+        <events>
+            <!--<checkout_cart_product_add_after>-->
+                <!--<observers>-->
+                    <!--<magecom_first>-->
+                        <!--<class>magecom_first/observer</class>-->
+                        <!--<method>doublePrice</method>-->
+                    <!--</magecom_first>-->
+                <!--</observers>-->
+            <!--</checkout_cart_product_add_after>-->
+            <model_save_after><!-- observe the event -->
+                <observers>
+                    <magecom_first>
+                        <class>magecom_first/observer</class>
+                        <method>adminEmail</method>
+                    </magecom_first>
+                </observers>
+            </model_save_after>
+        </events>
+        <blocks type="magecom_first/test" template ="magento/my/form.phtml">
+            <magecom_first>
+                <class>Magecom_First_Block</class>
+            </magecom_first>
+        </blocks>
+        <blocks>
+            <catalog>
+                <rewrite>
+                    <product_view>Magecom_First_Block_Catalog_Product_View</product_view>
+                </rewrite>
+            </catalog>
+        </blocks>
+        <models>
+            <magecom_first>
+                <class>Magecom_First_Model</class>
+                <resourceModel>magecom_first_resource</resourceModel>
+            </magecom_first>
+
+        <magecom_first_resource>
+            <class>Magecom_First_Model_Resource</class>
+            <entities>
+                <posts>
+                    <table>magecom_first_post</table>
+                </posts>
+            </entities>
+        </magecom_first_resource>
+
+        </models>
+
+        <resources>
+            <magecom_first_setup>
+                <setup>
+                    <module>Magecom_First</module>
+                </setup>
+            </magecom_first_setup>
+        </resources>
+        <helpers>
+            <magecom_first>
+                <class>Magecom_First_Helper</class>
+            </magecom_first>
+        </helpers>
+
+    </global>
+
+
+    <!--<admin>-->
+        <!--<routers>-->
+            <!--<magecom_first>-->
+                <!--<use>admin</use>-->
+                <!--<args>-->
+                    <!--<module>Magecom_First</module>-->
+                    <!--<frontName>magecom</frontName>-->
+                <!--</args>-->
+                    <!--</magecom_first>-->
+        <!--</routers>-->
+    <!--</admin>-->
+
+    <admin>
+        <routers>
+            <adminhtml>
+                <args>
+                    <modules>
+                        <magecom_first before="Mage_Adminhtml">Magecom_First_Adminhtml</magecom_first>
+                    </modules>
+                </args>
+            </adminhtml>
+        </routers>
+    </admin>
+
+    <frontend>
+        <routers>
+        <magecom_first>
+            <use>standard</use>
+            <args>
+                <module>Magecom_First</module>
+                <frontName>magecom</frontName>
+            </args>
+                </magecom_first>
+        </routers>
+        <layout>
+            <updates>
+                <magecom_first>
+                    <file>magecom_first.xml</file>
+                </magecom_first>
+            </updates>
+        </layout>
+            </frontend>
+</config>

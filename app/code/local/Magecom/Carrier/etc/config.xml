@@ -1,0 +1,59 @@
+<?xml version="1.0"?>
+
+<config>
+    <modules>
+        <Magecom_Carrier>
+            <version>1.0.2</version>
+        </Magecom_Carrier>
+    </modules>
+    <global>
+        <models>
+            <magecom_carrier>
+                <class>Magecom_Carrier_Model</class>
+            </magecom_carrier>
+        </models>
+        <resources>
+            <magecom_carrier_setup>
+                <setup>
+                    <module>Magecom_Carrier</module>
+                    <class>Magecom_Carrier_Model_Resource_Setup</class>
+                </setup>
+            </magecom_carrier_setup>
+        </resources>
+
+        <helpers>
+            <magecom_carrier>
+                <class>Magecom_Carrier_Helper</class>
+            </magecom_carrier>
+        </helpers>
+
+    </global>
+    <default>
+        <carriers>
+            <magecom_carrier>
+                <active>1</active>
+                <model>magecom_carrier/carrier</model>
+                <title>Julia Carrier</title>
+                <sort_order>10</sort_order>
+                <sallowspecific>0</sallowspecific>
+             </magecom_carrier>
+        </carriers>
+
+            <payment>
+                <magecom_payment>
+                    <model>magecom_carrier/payment</model>
+                    <active>1</active>
+                    <order_status>pending</order_status>
+                    <title>Pay order by points</title>
+                    <payment_action>sale</payment_action>
+                    <submit_url>https://someurl.com</submit_url>
+                    <merchant_id>111</merchant_id>
+                    <allowspecific>0</allowspecific>
+                    <sort_order>1</sort_order>
+                </magecom_payment>
+            </payment>
+
+
+        </default>
+</config>
+
