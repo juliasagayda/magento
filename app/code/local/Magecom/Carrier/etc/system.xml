@@ -106,14 +106,14 @@
                             <show_in_website>1</show_in_website>
                             <show_in_store>0</show_in_store>
                         </order_status>
-                        <submit_url>
-                            <label>Gateway URL</label>
+                        <points_course>
+                            <label>Points course of the amount</label>
                             <frontend_type>text</frontend_type>
                             <sort_order>58</sort_order>
                             <show_in_default>1</show_in_default>
                             <show_in_website>1</show_in_website>
                             <show_in_store>0</show_in_store>
-                        </submit_url>
+                        </points_course>
                         <merchant_id>
                             <label>Merchant ID</label>
                             <frontend_type>text</frontend_type>

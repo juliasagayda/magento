@@ -3,7 +3,7 @@
 <config>
     <modules>
         <Magecom_Carrier>
-            <version>1.0.2</version>
+            <version>1.0.0</version>
         </Magecom_Carrier>
     </modules>
     <global>
@@ -16,7 +16,7 @@
             <magecom_carrier_setup>
                 <setup>
                     <module>Magecom_Carrier</module>
-                    <class>Magecom_Carrier_Model_Resource_Setup</class>
+                    <class>Mage_Customer_Model_Entity_Setup</class>
                 </setup>
             </magecom_carrier_setup>
         </resources>
@@ -52,8 +52,18 @@
                     <sort_order>1</sort_order>
                 </magecom_payment>
             </payment>
-
-
         </default>
+    <frontend>
+        <events>
+            <sales_order_payment_save_before>
+                <observers>
+                    <magecom_carrier>
+                        <class>magecom_carrier/observer</class>
+                        <method>PointsPayment</method>
+                    </magecom_carrier>
+                </observers>
+            </sales_order_payment_save_before>
+        </events>
+     </frontend>
 </config>
 

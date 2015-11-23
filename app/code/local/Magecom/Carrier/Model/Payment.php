@@ -16,7 +16,7 @@ class Magecom_Carrier_Model_Payment extends Mage_Payment_Model_Method_Abstract {
     public function getOrderPlaceRedirectUrl()
     {
 //when you click on place order you will be redirected on this url, if you don't want this action remove this method
-        return Mage::getUrl('customcard/standard/redirect', array('_secure' => true));
+//        return Mage::getUrl('customcard/standard/redirect', array('_secure' => true));
     }
 
 
