@@ -1,0 +1,70 @@
+<?xml version="1.0"?>
+<config>
+    <modules>
+        <Magecom_Grid>
+            <version>1.0.0</version>
+        </Magecom_Grid>
+    </modules>
+    <global>
+        <blocks>
+            <adminhtml>
+                <rewrite>
+                    <sales_order_grid>Magecom_Grid_Block_Adminhtml_Sales_Order_Grid</sales_order_grid>
+                </rewrite>
+            </adminhtml>
+        </blocks>
+
+        <magecom_grid>
+            <class>Magecom_Grid_Block</class>
+        </magecom_grid>
+        <helpers>
+            <magecom_grid>
+                <class>Magecom_Grid_Helper</class>
+            </magecom_grid>
+        </helpers>
+        <magecom_grid>
+            <class>Magecom_Grid_Model</class>
+        </magecom_grid>
+        <resources>
+            <magecom_grid_setup>
+                <setup>
+                    <module>Magecom_Grid</module>
+                    <class>Mage_Customer_Model_Entity_Setup</class>
+                </setup>
+            </magecom_grid_setup>
+        </resources>
+    </global>
+    <adminhtml>
+        <events>
+            <core_block_abstract_prepare_layout_before>
+                <observers>
+                    <magecom_grid>
+                        <type>model</type>
+                        <class>Magecom_Grid_Model_Observer</class>
+                        <method>appendCustomColumn</method>
+                    </magecom_grid>
+                </observers>
+            </core_block_abstract_prepare_layout_before>
+            <sales_order_place_after>
+                <observers>
+                    <magecom_grid>
+                        <type>model</type>
+                        <class>Magecom_Grid_Model_Observer</class>
+                        <method>pointDifference</method>
+                    </magecom_grid>
+                </observers>
+            </sales_order_place_after>
+            <!--</sales_order_grid_collection_load_before>-->
+
+        </events>
+        <layout>
+            <updates>
+                <magecom_grid>
+                    <file>magecom/customgrid.xml</file>
+                </magecom_grid>
+            </updates>
+        </layout>
+    </adminhtml>
+
+
+</config>

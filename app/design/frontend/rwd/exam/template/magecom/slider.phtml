@@ -1,0 +1,33 @@
+
+   <?php
+   $sliders = $this->getSliderItem()->getData();
+   ?>
+<!--    <script src="//code.jquery.com/jquery-2.1.4.min.js"></script>-->
+
+        <?php
+        if ($sliders) { ?>
+         <ul class="bxslider">
+<!--            Zend_Debug::dump($sliders);die();-->
+          <?php foreach($sliders as $s) { ?>
+        <li><img src="<?= $this->getImageUrl($s['image_path']) ?>" /></li>
+        <?php }?>
+         </ul>
+       <?php } else {?>
+            <div class="no_slides_flower"></div>
+   <?php } ?>
+
+
+   <script>
+    jQuery(document).ready(function($) {
+        $('.bxslider').bxSlider({
+            mode: 'horizontal',
+            auto: true,
+            autoControls: true,
+            useCSS: true,
+            infiniteLoop: true,
+            hideControlOnEnd: true,
+            easing: 'ease-in-out'
+//            speed: 2000
+        });
+    });
+</script>

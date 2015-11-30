@@ -1,0 +1,146 @@
+<?xml version="1.0"?>
+
+<config>
+    <modules>
+        <Magecom_Exam>
+            <version>1.0.0</version>
+        </Magecom_Exam>
+    </modules>
+    <default>
+
+        <carriers>
+            <magecom_exam>
+                <active>1</active>
+                <model>magecom_exam/carrier_carrier</model>
+                <title>Carrier Title</title>
+                <name>Method Name</name>
+                <price>5.00</price>
+                <specificerrmsg>This shipping method is currently unavailable. If you would like to ship using this shipping method, please contact us.</specificerrmsg>
+            </magecom_exam>
+        </carriers>
+
+        <payment>
+            <magecom_payment>
+                <model>magecom_exam/payment</model>
+                <active>1</active>
+                <order_status>pending</order_status>
+                <title>Pay order by points</title>
+                <payment_action>sale</payment_action>
+                <submit_url>https://someurl.com</submit_url>
+                <merchant_id>111</merchant_id>
+                <allowspecific>0</allowspecific>
+                <sort_order>1</sort_order>
+            </magecom_payment>
+        </payment>
+
+    </default>
+    <global>
+        <models>
+            <magecom_exam>
+                <class>Magecom_Exam_Model</class>
+                <resourceModel>magecom_exam_resource</resourceModel>
+            </magecom_exam>
+
+            <magecom_exam_resource>
+                <class>Magecom_Exam_Model_Resource</class>
+                <entities>
+                    <banner>
+                        <table>magecom_exam_banner</table>
+                    </banner>
+                </entities>
+            </magecom_exam_resource>
+
+        </models>
+        <blocks type="magecom_exam/slider" template ="magento/slider.phtml">
+            <magecom_exam>
+                <class>Magecom_Exam_Block</class>
+            </magecom_exam>
+        </blocks>
+
+
+        <resources>
+            <magecom_exam_setup>
+                <setup>
+                    <module>Magecom_Exam</module>
+                    <class>Mage_Customer_Model_Entity_Setup</class>
+                </setup>
+            </magecom_exam_setup>
+        </resources>
+
+        <helpers>
+            <magecom_exam>
+                <class>Magecom_Exam_Helper</class>
+            </magecom_exam>
+        </helpers>
+
+    </global>
+
+    <admin>
+        <routers>
+            <adminhtml>
+                <args>
+                    <modules>
+                        <magecom_exam before="Mage_Adminhtml">Magecom_Exam_Adminhtml</magecom_exam>
+                    </modules>
+                </args>
+            </adminhtml>
+        </routers>
+    </admin>
+
+    <frontend>
+        <events>
+            <sales_order_payment_save_before>
+                <observers>
+                    <magecom_exam>
+                        <class>magecom_exam/observer</class>
+                        <method>PointsPayment</method>
+                    </magecom_exam>
+                </observers>
+            </sales_order_payment_save_before>
+        </events>
+    </frontend>
+
+    <adminhtml>
+        <events>
+            <core_block_abstract_prepare_layout_before>
+                <observers>
+                    <customgrid_column_append>
+                        <type>model</type>
+                        <class>Magecom_Exam_Model_Observer</class>
+                        <method>appendCustomColumn</method>
+                    </customgrid_column_append>
+                </observers>
+            </core_block_abstract_prepare_layout_before>
+        </events>
+
+        <events>
+            <core_block_abstract_to_html_before>
+                <observers>
+                    <changegrid_before_block>
+                        <class>Magecom_Exam_Model_Observer</class>
+                        <method>beforeBlockToHtml</method>
+                    </changegrid_before_block>
+                </observers>
+            </core_block_abstract_to_html_before>
+            <eav_collection_abstract_load_before>
+                <observers>
+                    <changegrid_collection_load>
+                        <class>Magecom_Exam_Model_Observer</class>
+                        <method>beforeCollectionLoad</method>
+                    </changegrid_collection_load>
+                </observers>
+            </eav_collection_abstract_load_before>
+        </events>
+
+    </adminhtml>
+
+    <!--<frontend>-->
+        <!--<layout>-->
+            <!--<updates>-->
+                <!--<magecom_first>-->
+                    <!--<file>magecom_first.xml</file>-->
+                <!--</magecom_first>-->
+            <!--</updates>-->
+        <!--</layout>-->
+     <!--</frontend>-->
+</config>

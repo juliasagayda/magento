@@ -1,0 +1,42 @@
+body {
+    background: red;
+}
+.cms-index-index .col-main{
+    width: 100%;
+}
+.amount_in_stock {
+    padding: 0 0 22px;
+    font-size: 20px;
+    border-bottom: 1px solid #D4D4D4;
+    margin: 0 0 14px;
+}
+body .header-language-background {
+    background-color: #790070;
+    box-shadow: 1px 1px 1px black;
+    margin-bottom: 20px;
+    position: fixed;
+    /*background-color: #790070;*/
+}
+body .wrapper {
+    background: #F7DDFF;
+}
+.button:hover, .cart-table .product-cart-actions .button:hover, #co-shipping-method-form .buttons-set .button:hover, .footer .button:hover {
+    background:  #790070 !important;
+}
+.button, .cart-table .product-cart-actions .button, #co-shipping-method-form .buttons-set .button, .footer .button {
+    background:  #790070 !important;
+}
+h1, .h1 {
+    color: #790070 !important;;
+}
+.product-view .product-shop .price-box .regular-price .price, .product-view .product-shop .price-box .special-price .price, .product-view .product-shop .price-box .full-product-price .price {
+    color:  #790070 !important;
+}
+.no_slides_flower {
+    background: url("../images/cvety-butony-vetki-makro.jpg") no-repeat;
+    width: 100%;
+    height: 100%;
+    display: block;
+    background-size: contain;
+    min-height: 882px;
+}

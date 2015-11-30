@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<config>
+    <menu>
+        <magecom_exam module="magecom_exam" translate="title">
+            <title>Exam Slider</title>
+            <sort_order>100</sort_order>
+            <children>
+                <custom module="magecom_exam" translate="title">
+                    <title>Custom settings</title>
+                    <sort_order>2</sort_order>
+                    <action>adminhtml/custom</action>
+                </custom>
+            </children>
+        </magecom_exam>
+    </menu>
+    <acl>
+        <resources>
+            <admin>
+                <children>
+                    <magecom_exam translate="title" module="magecom_exam">
+                        <title>Manage Sliders</title>
+                        <sort_order>100</sort_order>
+                        <children>
+                            <custom module="magecom_exam" translate="title">
+                                <title>Manage Sliders</title>
+                                <sort_order>2</sort_order>
+                                <action>adminhtml/custom</action>
+                            </custom>
+                        </children>
+                    </magecom_exam>
+                </children>
+            </admin>
+        </resources>
+    </acl>
+</config>
