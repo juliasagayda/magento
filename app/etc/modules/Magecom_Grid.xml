@@ -1,12 +1,12 @@
 <?xml version="1.0" ?>
 <config>
     <modules>
-        <Magecom_First>
+        <Magecom_Grid>
             <active>false</active>
             <codePool>local</codePool>
             <!--<depends>
                 <Mage_Catalog/>
             </depends>-->
-        </Magecom_First>
+        </Magecom_Grid>
     </modules>
 </config>
